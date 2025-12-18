@@ -1,6 +1,8 @@
-require 'plugins.lang'
-require 'plugins.util'
-require 'plugins.pretty'
+-- Don't include this unless you want all the plugins enabled
+
+require 'native-plugins.lang'
+require 'native-plugins.util'
+require 'native-plugins.pretty'
 
 local function pack_clean()
     local active_plugins = {}
@@ -28,4 +30,3 @@ local function pack_clean()
 end
 
 vim.keymap.set('n', '<leader>pc', pack_clean)
-

@@ -1,8 +1,12 @@
+-- Keymaps for native nvim operations
+-- Plugins should set their own keymaps
+
 local map = vim.keymap.set
 
 -- Session controls
 map('n', '<leader>q', '<Cmd>quit<CR>')
 map('n', '<leader>R', '<Cmd>restart<CR>')
+map('n', '<Esc>', '<Cmd>nohlsearch<CR>')
 
 -- Buffer controls
 map('n', '<leader>bd', '<Cmd>bdelete<CR>')
@@ -17,5 +21,5 @@ map('n', '<C-j>', '<C-w><C-j>')
 map('n', '<C-k>', '<C-w><C-k>')
 map('n', '<C-l>', '<C-w><C-l>')
 
--- Misc 
-map('n', '<Esc><Esc>', '<Cmd>nohlsearch<CR>')
+-- Terminal mode
+map('t', '<Esc><Esc>', '<C-\\><C-n>')

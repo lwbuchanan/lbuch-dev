@@ -1,15 +1,17 @@
 -- Aesthetic plugins: colors, ui, etc.
 
 local colors = {
-    'tomasr/molokai',
-    'EdenEast/nightfox.nvim',
+    'sainnhe/sonokai',
 }
 
-for _ , color in ipairs(colors) do
-    vim.pack.add({{ src = ('https://github.com/' .. color)}})
+for _, color in ipairs(colors) do
+    vim.pack.add({ { src = ('https://github.com/' .. color) } })
 end
 
-vim.cmd("colorscheme carbonfox")
+vim.g.sonokai_style = 'shusia'
+vim.g.sonokai_better_performance = 1
+vim.o.background = 'dark'
+vim.cmd("colorscheme sonokai")
 
 vim.pack.add({
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -41,4 +43,3 @@ vim.o.showmode = false
 --     ensure_installed = { "c", "cpp", "lua", "typst", "go", "rust" },
 --     highlight = { enable = true }
 -- })
-

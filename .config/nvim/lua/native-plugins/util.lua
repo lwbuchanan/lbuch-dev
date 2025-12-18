@@ -1,3 +1,5 @@
+-- Utility plugins
+
 vim.pack.add({
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
@@ -22,7 +24,10 @@ vim.keymap.set('n', '<leader>fc', telescope.colorscheme)
 vim.keymap.set('n', '<leader>fh', telescope.help_tags)
 vim.keymap.set('n', '<leader>fk', telescope.keymaps)
 vim.keymap.set('n', 'z=', telescope.spell_suggest)
+vim.keymap.set('n', 'gri', telescope.lsp_implementations)
+vim.keymap.set('n', 'grd', telescope.lsp_definitions)
+vim.keymap.set('n', 'grD', vim.lsp.buf.declaration)
 
 
 require('oil').setup()
-vim.keymap.set('n', '<leader>e', "<Cmd>Oil --float --preview<CR>")
+vim.keymap.set('n', '<leader>e', "<Cmd>Oil --preview<CR>")
