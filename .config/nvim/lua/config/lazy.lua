@@ -25,7 +25,7 @@ require("lazy").setup({
   },
   spec = {
     -- import your plugins
-    { import = "lazy-plugins" },
+    { import = "plugins" },
   },
   install = { colorscheme = { "default" } },
   checker = { enabled = true, notify = false },
