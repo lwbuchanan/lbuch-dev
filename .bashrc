@@ -105,6 +105,8 @@ alias lg='lazygit'
 alias cd='z'
 alias v='nvim'
 alias sv='sudoedit'
+alias doom='~/.config/emacs/bin/doom'
+
 
 alias readapaper='~/Documents/Papers/scripts/readapaper.py'
 alias task='go-task'
