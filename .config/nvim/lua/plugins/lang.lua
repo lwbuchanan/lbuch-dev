@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 return {
     -- LSP
     {
@@ -7,19 +6,44 @@ return {
         dependencies = {
             {
                 'j-hui/fidget.nvim',
-                opts = {}
+                opts = {
+                    progress = {
+                        display = {
+                            done_icon = "Done", -- Icon shown when all LSP progress tasks are complete
+                            progress_icon =     -- Icon shown when LSP progress tasks are in progress
+                            { "line" },
+                            overrides = {       -- Override options from the default notification config
+                                rust_analyzer = { name = "rust-analyzer" },
+                            },
+                        },
+                    }
+                }
             },
             {
                 'saghen/blink.cmp',
                 version = '1.*',
                 opts = {
-                    -- All presets have the following mappings:
-                    -- C-space: Open menu or open docs if already open
-                    -- C-n/C-p or Up/Down: Select next/previous item
-                    -- C-e: Hide menu
-                    -- C-k: Toggle signature help (if signature.enabled = true)
                     keymap = { preset = 'default' },
-                    completion = { documentation = { auto_show = true } },
+                    completion = {
+                        documentation = { auto_show = true },
+                        menu = {
+                            auto_show = false,
+                            draw = {
+                                columns = { { 'kind' }, { 'label', 'label_description', gap = 1 } },
+                                components = {
+                                    kind = {
+                                        ellipsis = true,
+                                        width = { fill = false },
+                                        text = function(ctx) return ctx.kind:sub(1, 3) end,
+                                    },
+                                }
+                            }
+                        },
+                        ghost_text = {
+                            enabled = true,
+                            show_with_menu = false
+                        }
+                    },
                 },
                 sources = {
                     default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -44,23 +68,31 @@ return {
                     automatically_enable = { exclude = {} }
                 },
             },
+            {
+                "rachartier/tiny-inline-diagnostic.nvim",
+                event = "VeryLazy",
+                priority = 1000,
+                opts = {
+                    preset = "minimal",
+                },
+            },
         },
         config = function()
             -- Diagnostics
             vim.diagnostic.config {
-                underline = { vim.diagnostic.severity.ERROR },
-                float = true,
-                update_in_insert = true,
-                severity_sort = true,
-                virtual_lines = true,
-                signs = {
-                    text = {
-                        [vim.diagnostic.severity.ERROR] = 'E',
-                        [vim.diagnostic.severity.WARN] = 'W',
-                        [vim.diagnostic.severity.HINT] = 'H',
-                        [vim.diagnostic.severity.INFO] = 'I',
-                    },
-                },
+                -- underline = { vim.diagnostic.severity.ERROR },
+                -- float = true,
+                -- update_in_insert = true,
+                -- severity_sort = true,
+                -- virtual_lines = true,
+                -- signs = {
+                --     text = {
+                --         [vim.diagnostic.severity.ERROR] = 'E',
+                --         [vim.diagnostic.severity.WARN] = 'W',
+                --         [vim.diagnostic.severity.HINT] = 'H',
+                --         [vim.diagnostic.severity.INFO] = 'I',
+                --     },
+                -- },
             }
 
             -- Inlay hints

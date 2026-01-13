@@ -16,6 +16,15 @@ return {
         },
     },
     {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate',
+        opts = {
+            ensure_installed = { "c", "cpp", "lua", "typst", "go", "rust" },
+            highlight = { enable = true }
+        }
+    },
+    {
         'lewis6991/gitsigns.nvim',
         event = 'VeryLazy',
         opts = {

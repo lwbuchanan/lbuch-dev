@@ -10,7 +10,12 @@ return {
             vim.cmd("colorscheme sonokai")
         end
     },
-
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+        event = 'BufEnter',
+    },
     {
         'nvim-lualine/lualine.nvim',
         lazy = false,
@@ -37,9 +42,7 @@ return {
                         {
                             'lsp_status',
                             symbols = {
-                                -- Standard unicode symbols to cycle through for LSP progress:
                                 spinner = {},
-                                -- Standard unicode symbol for when LSP is done:
                                 done = '',
                                 separator = ' ',
                             },
