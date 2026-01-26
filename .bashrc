@@ -106,9 +106,9 @@ alias cd='z'
 alias v='nvim'
 alias sv='sudoedit'
 alias doom='~/.config/emacs/bin/doom'
-
+alias emacs='emacs -nw'
 
 alias readapaper='~/Documents/Papers/scripts/readapaper.py'
 alias task='go-task'
-alias megatonew='cargo r --manifest-path ~/Projects/megaton/Cargo.toml'
+alias mgt='cargo r --manifest-path ~/Projects/megaton/Cargo.toml'
 
