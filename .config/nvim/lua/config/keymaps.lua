@@ -9,9 +9,11 @@ map({ 'n', 'x' }, '<leader>R', '<Cmd>restart<CR>')
 map({ 'n' }, '<Esc>', '<Cmd>nohlsearch<CR>')
 map({ 'n', 'x' }, '<leader>m', '<Cmd>make<CR>')
 map({ 'n', 'x' }, '<leader>M', function()
-    vim.ui.input({ prompt = 'Compile command: ' },
+    vim.ui.input({ prompt = 'Compile command: ', default = vim.o.makeprg, completion = 'shellcmdline' },
         function(input)
-            vim.o.makeprg = input
+            if input ~= nil then
+                vim.o.makeprg = input
+            end
         end)
 end)
 

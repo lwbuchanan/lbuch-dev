@@ -9,10 +9,9 @@ return {
                 opts = {
                     progress = {
                         display = {
-                            done_icon = "Done", -- Icon shown when all LSP progress tasks are complete
-                            progress_icon =     -- Icon shown when LSP progress tasks are in progress
-                            { "line" },
-                            overrides = {       -- Override options from the default notification config
+                            done_icon = "Done",
+                            progress_icon = { "line" },
+                            overrides = {
                                 rust_analyzer = { name = "rust-analyzer" },
                             },
                         },
@@ -132,4 +131,13 @@ return {
         ft = 'typst',
     },
 
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
 }
