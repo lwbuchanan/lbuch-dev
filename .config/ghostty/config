@@ -1,4 +1,4 @@
-# This is the configuration file for Ghostty.
+# This is the configuration file for Ghostty
 #
 # This template file has been automatically created at the following
 # path since Ghostty couldn't find any existing config files on your system:
@@ -45,5 +45,4 @@
 theme = Monokai Pro
 gtk-single-instance = true
 window-theme = system
-window-width = 1920
-window-height = 1080
+font-size = 14

@@ -1,7 +1,7 @@
 return {
     {
         'stevearc/oil.nvim',
-        event = 'VeryLazy',
+        lazy = false,
         opts = {
             default_file_explorer = true,
             columns = {
@@ -90,4 +90,9 @@ return {
             }
         end,
     },
+    {
+        "chentoast/marks.nvim",
+        event = "VeryLazy",
+        opts = {},
+    }
 }
