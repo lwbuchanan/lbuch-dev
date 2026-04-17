@@ -58,44 +58,38 @@ return {
                 opts = {
                     ensure_installed = {
                         'lua_ls',
-                        'asm_lsp',
                         'gopls',
                         'tinymist',
                         'rust_analyzer',
                         'clangd',
                     },
-                    automatically_enable = { exclude = {} }
+                    automatically_enable = {
+                        exclude = {
+                        }
+                    }
                 },
             },
-            {
-                "rachartier/tiny-inline-diagnostic.nvim",
-                event = "VeryLazy",
-                priority = 1000,
-                opts = {
-                    preset = "minimal",
-                },
-            },
+            -- {
+            --     "rachartier/tiny-inline-diagnostic.nvim",
+            --     event = "VeryLazy",
+            --     priority = 1000,
+            --     opts = {
+            --         preset = "minimal",
+            --     },
+            -- },
         },
         config = function()
-            -- Diagnostics
-            vim.diagnostic.config {
-                -- underline = { vim.diagnostic.severity.ERROR },
-                -- float = true,
-                -- update_in_insert = true,
-                -- severity_sort = true,
-                -- virtual_lines = true,
-                -- signs = {
-                --     text = {
-                --         [vim.diagnostic.severity.ERROR] = 'E',
-                --         [vim.diagnostic.severity.WARN] = 'W',
-                --         [vim.diagnostic.severity.HINT] = 'H',
-                --         [vim.diagnostic.severity.INFO] = 'I',
-                --     },
-                -- },
-            }
+            -- vim.lsp.inlay_hint.enable(true)
+            vim.diagnostic.config({
+                update_in_insert = false,
+                severity_sort = true,
+                float = { source = 'if_many' },
+                underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
-            -- Inlay hints
-            vim.lsp.inlay_hint.enable(true)
+                virtual_text = true,   -- Text shows up at the end of the line
+
+                jump = { float = true },
+            })
 
             -- Server config
             vim.lsp.config('lua_ls', {
@@ -107,6 +101,9 @@ return {
                     }
                 }
             })
+            -- vim.lsp.config('clangd', {
+            --
+            -- })
         end,
         keys = function()
             local builtin = require('telescope.builtin')
@@ -130,7 +127,6 @@ return {
         'chomosuke/typst-preview.nvim',
         ft = 'typst',
     },
-
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
