@@ -3,9 +3,7 @@ sudo pacman -S --needed --noconfirm \
 neovim \
 ripgrep \
 fd \
-ghostty \
-lf \
+tree-sitter-cli\
+wezterm \
 eza \
 zoxide \
-chafa \
-pistol \

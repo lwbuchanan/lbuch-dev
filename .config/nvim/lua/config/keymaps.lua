@@ -34,3 +34,6 @@ map({ 'n', 'x' }, '<C-l>', '<C-w><C-l>')
 
 -- Terminal mode
 map('t', '<Esc><Esc>', '<C-\\><C-n>')
+
+-- Remove keymaps
+map({ 'n', 'x' }, '<F1>', '')

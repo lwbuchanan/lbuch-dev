@@ -4,7 +4,7 @@ vim.o.swapfile = false
 vim.o.undofile = true
 
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 vim.o.winborder = ""
 
@@ -39,3 +39,9 @@ vim.o.confirm = true
 vim.o.cursorline = true
 
 vim.o.background = "dark"
+
+vim.o.termguicolors = true
+
+-- vim.cmd('hi VirtualTextError ctermfg=Red')
+-- vim.cmd('hi DiagnosticError ctermfg=Red')
+
