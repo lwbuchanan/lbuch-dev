@@ -46,6 +46,7 @@ alias cat='bat'
 
 alias lg='lazygit'
 alias v='nvim'
+export NVIM_APPNAME='nvim'
 alias sv='sudoedit'
 
 alias task='go-task'
