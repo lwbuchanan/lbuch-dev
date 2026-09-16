@@ -34,3 +34,13 @@ nnoremap <buffer> ]] <scriptcmd>SearchProc(v:count1)<CR>
 xnoremap <buffer> ]] <scriptcmd>SearchProc(v:count1)<CR>
 nnoremap <buffer> [[ <scriptcmd>SearchProc(v:count1, 'b')<CR>
 xnoremap <buffer> [[ <scriptcmd>SearchProc(v:count1, 'b')<CR>
+
+compiler odin
+
+augroup OdinBufWriteHooks
+    autocmd!
+    autocmd BufWrite *.odin execute "Make! check"
+augroup END
+
+nnoremap <LocalLeader>m <Cmd>vertical Make build<CR>
+nnoremap <LocalLeader>r <Cmd>Make run<CR>

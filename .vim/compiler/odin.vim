@@ -13,12 +13,3 @@ augroup OdinQuickFixHooks
     "autocmd QuickFixCmdPre make call cargo#quickfix#CmdPre()
     "autocmd QuickFixCmdPost make call cargo#quickfix#CmdPost()
 augroup END
-
-augroup OdinBufWriteHooks
-    autocmd!
-    autocmd BufWrite *.odin execute "Make check"
-augroup END
-
-nnoremap <LocalLeader>m <Cmd>Make build<CR>
-nnoremap <LocalLeader>r <Cmd>Make run<CR>
-nnoremap <LocalLeader>c <Cmd>Make check<CR>

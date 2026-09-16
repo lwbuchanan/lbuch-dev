@@ -34,7 +34,6 @@ set guifont=JetBrains\ Mono\ 14
 
 " Colors
 set background=dark
-colorscheme habamax
 syntax on
 
 " Text formatting
@@ -74,4 +73,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-sensible'
+Plug 'bluz71/vim-moonfly-colors'
 call plug#end()
+
+colorscheme moonfly

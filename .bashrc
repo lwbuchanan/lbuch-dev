@@ -20,11 +20,17 @@ shopt -s expand_aliases
 shopt -s histappend
 
 # Source outside config
-[ -r ~/.profile ] && . ~/.profile
 [ -r /usr/share/nvm/init-nvm.sh ] && . /usr/share/nvm/init-nvm.sh
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+[ -r ~/.local/share/bob/env/env.sh ] && . "/home/luke/.local/share/bob/env/env.sh"
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
+
+# Env vars
+export EDITOR='vim'
+export MANPAGER="vim +MANPAGE --not-a-term -"
+
+export PATH=$PATH:~/.cargo/bin/:~/.config/emacs/bin/
 
 # Aliases
 alias df='df -h'
@@ -45,7 +51,3 @@ alias cd='z'
 alias cat='bat'
 
 alias v='vim'
-alias sv='sudoedit'
-
-alias task='go-task'
-alias mgt='cargo r --manifest-path ~/Projects/megaton/Cargo.toml --'
