@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/luke/Projects/stupid_ming'
+let g:netrw_dirhist_5='/home/luke/Projects/stupid_ming/shaders'
+let g:netrw_dirhist_4='/home/luke/Projects/stupid_ming'
+let g:netrw_dirhist_3='/home/luke/Projects/stupid_ming/shaders'
+let g:netrw_dirhist_2='/home/luke/Projects/stupid_ming'
+let g:netrw_dirhist_1='/home/luke/Projects/stupid_ming/shaders'
+let g:netrw_dirhist_0='/home/luke/Projects/stupid_ming'
+let g:netrw_dirhist_9='/home/luke'
+let g:netrw_dirhist_8='/home/luke/Projects/stupid_ming'
+let g:netrw_dirhist_7='/home/luke/Projects/stupid_ming/shaders'

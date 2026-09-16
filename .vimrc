@@ -10,6 +10,7 @@ set virtualedit=block
 set belloff=all
 set clipboard=unnamed,unnamedplus
 set history=1000
+set nolangremap
 
 " Nicer UI
 set number
@@ -27,6 +28,9 @@ set scrolloff=5
 set laststatus=2
 set showmode
 set showcmd
+set guioptions-=m
+set guioptions-=T
+set guifont=JetBrains\ Mono\ 14
 
 " Colors
 set background=dark
@@ -46,20 +50,28 @@ set ignorecase
 set smartcase
 set incsearch
 
+let mapleader=" "
+let maplocalleader=","
+
+nnoremap <Leader>e <Cmd>Explore<CR>
+
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-nnoremap ]b :bnext<CR>
-nnoremap [b :bprev<CR>
+" Plugins
+filetype plugin indent on
 
-nnoremap ]c :cnext<CR>
-nnoremap [c :cprev<CR>
+runtime! macros/matchit.vim
+runtime ftplugin/man.vim
 
-
-" TODO: 
-" Add clipboard support
-" Add some plugins:
-" - https://github.com/mg979/vim-visual-multi
-" - https://github.com/junegunn/fzf.vim
+call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sensible'
+call plug#end()

@@ -44,9 +44,7 @@ alias lra='exa -lA --git --group-directories-first -T -L 3'
 alias cd='z'
 alias cat='bat'
 
-alias lg='lazygit'
-alias v='nvim'
-export NVIM_APPNAME='nvim'
+alias v='vim'
 alias sv='sudoedit'
 
 alias task='go-task'
